@@ -4,15 +4,21 @@
       <Login v-if='isLog==false' v-bind:toggleLogin="toggleLogin" v-bind:isLog="isLog"/>
 
     <transition name="fade">
-      <Profile v-if='isLog==true'/>
-    </transition>
-    <transition name="fade">
-      <div class="actions" v-if='isLog==true'>
-        <Action v-bind:msg="'Voir le planning'"/>
-        <Action v-bind:msg="'Faire une réservation'"/>
-        <Action v-bind:msg="'Informations et détails'"/>
+      <div class="home" v-if='isLog==true'>
+        <div class="actions">
+          <Action v-bind:msg="'Voir le planning'" v-bind:side="'left'"/>          
+        </div>
+        <Profile v-bind:user="user"/>
+        <div class="actions">
+          <Action v-bind:msg="'Texte court'" v-bind:side="'right'"/>
+          <Action v-bind:msg="'Un texte pas très long'" v-bind:side="'right'"/>
+          <Action v-bind:msg="'Une histoire abominablement longue'" v-bind:side="'right'"/>
+        </div>
       </div>
     </transition>
+    
+
+
   </div>
 </template>
 
@@ -25,7 +31,13 @@ export default {
     name: 'App',
     data() {
       return {
-        user: "guest",
+        user: {
+          name: "Desprez",
+          firstname: "Julien",
+          mail: "juliendesprez1@gmail.com",
+          age: 30,
+          phone: "06 29 69 27 80"          
+        },
         isLog: false
       }
     },
@@ -94,25 +106,21 @@ html, body {
   margin: auto;
 }
 
-.actions, .profile {
-  margin-top: auto;
-  margin-bottom: auto;
+.home {
+  position: relative;
+  margin: auto;
+  display: flex;
 }
 
 .profile {
-  margin-left: auto;
-  margin-right: 50px;
+  z-index: 2;
 }
 
 .actions {
-  margin-left: 50px;
-  margin-right: auto;
-  width: 500px;
-  height: 50%;
-}
-
-.action {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 </style>

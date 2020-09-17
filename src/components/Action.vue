@@ -1,13 +1,14 @@
 <template>
-    <div class="action">  
-        {{ msg }}      
+    <div :class="['action', side]">  
+        <p>{{ msg }}</p>      
+        <i class="far fa-calendar-plus"></i>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Profile',
-    props: ['msg']
+    name: 'Action',
+    props: ['msg', 'side']
 }
 </script>
 
@@ -19,14 +20,18 @@ export default {
 }
 
 .action {
-    width: 500px;
-    height: 50px;
-    padding: 15px 60px;
-    border-radius: 999px;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 80px;
+    border-radius: 5px;
     background-color: #fff;
-    background-image: linear-gradient(to right, transparent 50%, #5260ad 50%, #8b97d7);
-    background-size: 200%;
-    color: #8b97d7;
+    color: #5260ad;
     font-size: 24px;
     font-weight: 500;
     cursor: pointer;
@@ -34,10 +39,38 @@ export default {
     justify-content: center;
     align-items: center;
     transition: 0.2s ease-in-out;
+    border: 1px solid grey;
 }
 
-.action:hover {
+.action:hover {    
     color: #fff;
-    background-position: 100%;
+    background-color: #5260ad;
 }
+
+.action p {
+    white-space: nowrap;
+}
+
+.action.right {
+    margin-left: calc(-100% + 75px);
+}
+
+.action.left {
+    margin-left: calc(100% - 75px);
+
+}
+.action.right:hover {
+    margin-left: 0px;
+}
+
+.action.left:hover {
+    margin-left: 0px;
+}
+
+.action.right i {
+    position: absolute;
+    right: 20px;
+    font-size: 40px;
+}
+    
 </style>
