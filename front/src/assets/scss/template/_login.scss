@@ -1,0 +1,32 @@
+.hba-t-login {
+    margin: auto;
+    width: 400px;
+
+    &__title {
+        color: $grey;
+        font-size: 28px; 
+        font-weight: 500;
+        margin-bottom: 45px;
+
+        strong {
+            color: $primary;
+            font-weight: 900;
+        }  
+    }
+    
+    &__userInput {
+        margin-bottom: 40px;
+    }
+
+    &__passwordInput {
+        margin-bottom: 40px;
+    }
+
+    &__registerLink {
+        text-decoration: underline;
+        font-size: 12px;
+        color: $primary;
+        cursor: pointer;
+        margin-top: 25px;
+    }
+}

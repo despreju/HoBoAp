@@ -23,7 +23,7 @@
 </template>
 
 <script> 
-import Login from './components/Login.vue'
+import Login from './components/template/Login.vue'
 import Profile from './components/Profile.vue'
 import Action from './components/Action.vue'
 

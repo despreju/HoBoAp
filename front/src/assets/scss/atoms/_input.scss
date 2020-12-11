@@ -1,0 +1,81 @@
+.hba-a-input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    > label {
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        transform: translateY(-50%);
+        color: $grey;
+        font-size: 20px;
+        transition: 0.2s ease-in-out;
+    }
+    
+    > input {
+        display: block;
+        width: 100%;
+        padding: 10px 0px;
+        border: none;
+        outline: none;
+        background: none;
+        border-bottom: 2px solid $grey;
+        font-size: 20px;
+        transition: 0.2s ease-in-out;
+    }
+
+    &.-fill {
+
+        > label {
+            top: 0px;
+            transform: translateY(-100%);
+            color:$primary;
+            font-size: 14px;
+        }
+        
+        > input {
+            border-bottom-color: $primary;
+        }
+    }
+
+    &.-error {
+
+        > label {
+            color: $red
+        }
+        
+        > input {
+            color: $red;
+            border-bottom-color: $red;
+        }
+    }
+}
+
+.hba-a-input:focus-within{
+    
+    > label {
+        top: 0px;
+        transform: translateY(-100%);
+        color: $primary;
+        font-size: 14px;
+    }
+    
+    > input {
+        border-bottom-color: $primary;
+    }
+
+    &.-error{
+    
+        > label {
+            top: 0px;
+            transform: translateY(-100%);
+            color: $primary;
+            font-size: 14px;
+        }
+        
+        > input {
+            border-bottom-color: $primary;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.hba-a-button {
+    width: fit-content;
+
+    border: 3px solid $primary;
+    border-radius: 999px;
+    background-image: linear-gradient(to right, transparent 50%, $primary 50%, $primary);
+    background-size: 200%;
+    color: $primary;
+    font-weight: 500;
+    cursor: pointer;
+    @include transition;
+
+    &.-small {
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+
+    &.-medium {
+        font-size: 16px;
+        padding: 10px 30px;
+    }
+
+    &.-large {
+        font-size: 20px;
+        padding: 15px 60px;
+    }
+}
+
+.hba-a-button:hover {
+    color: $white;
+    background-position: 100%;
+    border: 3px solid $white;
+}
