@@ -1,4 +1,4 @@
-# trevenastbooking
+# HoBoAp
 
 ## Project setup
 ```
