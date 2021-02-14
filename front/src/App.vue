@@ -71,7 +71,7 @@ html, body {
   content: "";
   width: 100%;
   height: 100%;
-  background-image: url("./assets/fond.png");
+  background-image: url("./assets/img/fond.png");
   background-size: cover;
   position: absolute;
   top: 0;

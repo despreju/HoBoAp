@@ -1,27 +1,13 @@
 <template>
-    <div class="hba-m-profile">
-        <Card>
+    <Card class="hba-o-profile">
+        <div class="hba-o-profile__picture"/>
+        <div class="hba-o-profile__infos">
             <Field title="E-Mail" :value="user.mail"/>
             <Field title="Nom" :value="user.name"/>
             <Field title="Habilitation" :value="user.level"/>
-        </Card>
-        
-        <span style="margin-top: 500px; background-color: white;">
-            <slot name='firstname' v-bind:userTest="userTest">
-                {{ userTest.firstname }}
-            </slot>
-        </span>
-        <span style="margin-top: 500px; background-color: white;">
-            <slot name='name' v-bind:userTest="userTest">
-                {{ userTest.name }}
-            </slot>
-        </span>
-        <span style="margin-top: 500px; background-color: white;">
-            <slot name='age' v-bind:userTest="userTest">
-                {{ userTest.age }}
-            </slot>
-        </span>
-    </div>
+        </div>
+        <div class="hba-o-profile__logout"/>
+    </Card>
 </template>
 
 <script>
@@ -34,12 +20,7 @@ export default {
     name: 'Profile',
     components: { Card, Field },
     data() {
-        return {            
-            userTest: {
-                firstname: 'Julien',
-                name: 'DESPREZ',
-                age: '31',
-            }
+        return { 
         }
     },
     computed: {
@@ -49,3 +30,24 @@ export default {
     },        
 }
 </script>
+
+<style>
+.hba-o-profile__picture {
+    position: relative;
+    width: 100px;
+    height: 100px;
+        margin-right: 50px;
+}
+
+.hba-o-profile__picture::after {      
+    position:absolute;
+    content: "";     
+    left: 0;
+    background-size: cover;
+    background-image: url("../../assets/img/profile_pic.png");
+    border-radius: 999px;
+
+    width: 100px;
+    height: 100px;
+}
+</style>

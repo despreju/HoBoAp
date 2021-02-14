@@ -1,14 +1,7 @@
 <template>
     <div class="hba-t-home">
-        <Button class="hba-t-home__logoutButton" text='Se déconnecter' size="large" @click='_logout'/>
-        <Profile>
-            <template v-slot:age="{ userTest }">
-                {{ userTest.name }}
-            </template>
-            <template v-slot:name="{ userTest }">
-                {{ userTest.age }}
-            </template>
-        </Profile>
+        <Button class="hba-t-home__logoutButton" text='Se déconnecter' size="large" @click='logout()'/>
+        <Profile/>
     </div>
 </template> 
 
@@ -26,13 +19,12 @@ export default {
             bool: false
         }
     },
-
     methods: {
         ...mapActions({
-            logout: 'credentials/logout',
+            logoutAction: 'credentials/logout',
         }),
-        _logout() {
-            this.logout();
+        logout() {
+            this.logoutAction();
             this.$router.push('/login');
         }
     },

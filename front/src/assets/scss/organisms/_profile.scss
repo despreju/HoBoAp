@@ -1,12 +1,15 @@
-.hba-m-profile {
+.hba-o-profile {
     margin: 50px;
+    border-radius: 999px;
+    flex-direction: row;
+    padding: 20px;
 
-    .hba-a-card {
-        border-radius: 999px;
-        flex-direction: row;
+    &__infos {
+        display: flex;
+        flex-direction: column;
 
-        hba-a-field {
-            
+        .hba-a-field:not(:last-child) {
+            margin-bottom: 10px;
         }
     }
 }
