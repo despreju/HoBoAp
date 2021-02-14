@@ -1,8 +1,7 @@
 <template>
   <div id="app">
 
-      <Login v-if='isLog==false' v-bind:toggleLogin="toggleLogin" v-bind:isLog="isLog"/>
-
+      
     <transition name="fade">
       <div class="home" v-if='isLog==true'>
         <div class="actions">
@@ -17,18 +16,18 @@
       </div>
     </transition>
     
-
+  <transition name="fade" mode="out-in"><router-view></router-view></transition>
 
   </div>
 </template>
 
 <script> 
-import Login from './components/template/Login.vue'
-import Profile from './components/Profile.vue'
-import Action from './components/Action.vue'
+import store from './store/index';
+import { mapActions } from 'vuex';
 
-export default {
+export default {    
     name: 'App',
+    store,
     data() {
       return {
         user: {
@@ -41,14 +40,14 @@ export default {
         isLog: false
       }
     },
-    components: {
-      Login, Profile, Action
-    },
     methods: {
-      toggleLogin: function () {
-        this.isLog = !this.isLog;
-      }
-    }
+      ...mapActions({
+          initProfile: 'credentials/initProfile',
+      }),
+    },
+    created() {       
+      this.initProfile();
+    },
 }
 </script>
 
@@ -60,7 +59,6 @@ html, body {
 
 #app {
   position: relative;
-  display: flex;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

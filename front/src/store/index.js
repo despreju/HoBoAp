@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-//import unicorns from './unicorns';
+
+import credentials from './credentials';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    //unicorns,
+    credentials,
   },
 });

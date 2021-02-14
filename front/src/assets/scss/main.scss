@@ -1,17 +1,22 @@
 @import './_colors.scss';
 @import './_mixins.scss';
+@import './_transitions.scss';
 
 //atoms
 @import './atoms/_button.scss';
 @import './atoms/_card.scss';
 @import './atoms/_input.scss';
+@import './atoms/_field.scss';
 
 //molecules
 
 //organisms
+@import './organisms/_profile.scss';
 
 //template
+@import './template/_home.scss';
 @import './template/_login.scss';
+@import './template/_registration.scss';
 
 *, ::before, ::after {
     box-sizing: border-box;

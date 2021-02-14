@@ -1,6 +1,5 @@
 .hba-t-login {
-    margin: auto;
-    width: 400px;
+    @include flex-center;
 
     &__title {
         color: $grey;
@@ -14,7 +13,7 @@
         }  
     }
     
-    &__userInput {
+    &__mailInput {
         margin-bottom: 40px;
     }
 

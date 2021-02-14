@@ -1,0 +1,24 @@
+.hba-t-registration {
+    @include flex-center;
+
+    &__title {
+        color: $grey;
+        font-size: 28px; 
+        font-weight: 500;
+        margin-bottom: 45px;
+
+        strong {
+            color: $primary;
+            font-weight: 900;
+            margin-right: 10px;
+        }  
+    }
+    
+    &__form {
+
+        .hba-a-input {
+            margin-bottom: 40px;
+        }
+    }
+
+}
